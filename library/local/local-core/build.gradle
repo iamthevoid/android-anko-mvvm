@@ -44,6 +44,7 @@ dependencies {
     implementation "iam.thevoid.extensions:android:$e"
 
     testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$ajunit"
     androidTestImplementation "androidx.test:runner:$runner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 

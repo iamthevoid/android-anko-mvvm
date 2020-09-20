@@ -12,7 +12,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "int", "MIN_SDK_VERSION", "$libMinSdk"
     }
 
     buildTypes {
@@ -27,24 +29,29 @@ android {
             debuggable = true
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
-    implementation project(':local-core')
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation "androidx.recyclerview:recyclerview:$recycler"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "androidx.core:core-ktx:$ktx"
+
+
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jackson"
 
     implementation "iam.thevoid.extensions:pure:$e"
-
-    implementation "androidx.core:core-ktx:$ktx"
 
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$ajunit"
     androidTestImplementation "androidx.test:runner:$runner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
-
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.4.0"
 
 }

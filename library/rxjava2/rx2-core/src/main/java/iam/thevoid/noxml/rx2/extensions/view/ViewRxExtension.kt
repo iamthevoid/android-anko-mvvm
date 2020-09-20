@@ -43,9 +43,6 @@ fun View.disableWhileLoading(loading: RxLoading) =
 fun View.enableWhileLoading(loading: RxLoading) =
     addSetter(loading.observe()) { isEnabled = it }
 
-fun View.setEnabled(enabled: Flowable<Boolean>) =
-    addSetter(enabled) { isEnabled = it }
-
 /**
  * Margin
  */
@@ -124,30 +121,8 @@ fun View.hide(needHide: Flowable<Boolean>) =
  * Color
  */
 
-fun View.setBackgroundColor(color: Flowable<Int>) =
-    addSetter(color) { setBackgroundColor(it) }
-
 fun View.setBackgroundColorResource(color: Flowable<Int>) =
     addSetter(color) { setBackgroundColor(color(it)) }
-
-@Suppress("DEPRECATION")
-fun View.setBackgroundDrawable(background: Flowable<Drawable>) =
-    addSetter(background) { setBackgroundDrawable(it) }
-
-fun View.setBackgroundResource(background: Flowable<Int>) =
-    addSetter(background) { setBackgroundResource(it) }
-
-/**
- * Alpha
- */
-
-fun View.setAlpha(alpha: Flowable<Float>) =
-    addSetter(alpha) {
-        this.alpha = when (it) {
-            in 0.0..1.0 -> it
-            else -> throw IllegalArgumentException("Alpha must be in 0..1f range, current value is $it")
-        }
-    }
 
 /**
  * On click listener
@@ -192,13 +167,6 @@ fun <T : Any> View.onFocusChangeForceFalseOnClearFocus(
         it.setCancellable { onFocusChangeListener = null }
     }, BackpressureStrategy.LATEST).doOnNext(onFocusChange::onNext))
 }
-
-/**
- * Transition
- */
-
-fun View.setTranslationY(translation: Flowable<Float>) =
-    addSetter(translation) { translationY = it }
 
 /**
  * Height

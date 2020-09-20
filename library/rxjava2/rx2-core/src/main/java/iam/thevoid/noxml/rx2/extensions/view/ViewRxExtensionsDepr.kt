@@ -1,3 +1,5 @@
+@file:Suppress("DeprecatedCallableAddReplaceWith", "DEPRECATION")
+
 package iam.thevoid.noxml.rx2.extensions.view
 
 import android.os.Build
@@ -47,13 +49,13 @@ fun View.hide(needHide: RxField<Boolean>) =
 fun View.hide(needHide: RxItem<Boolean>) =
     hide(needHide.observe())
 
-@Deprecated("Fields and Items will be removed in release version, use realization with Flowable instead")
-fun View.setAlpha(alpha: RxField<Float>) =
-    setAlpha(alpha.onlyPresent())
-
-@Deprecated("Fields and Items will be removed in release version, use realization with Flowable instead")
-fun View.setAlpha(alpha: RxItem<Float>) =
-    setAlpha(alpha.observe())
+//@Deprecated("Fields and Items will be removed in release version, use realization with Flowable instead")
+//fun View.setAlpha(alpha: RxField<Float>) =
+//    setAlpha(alpha.onlyPresent())
+//
+//@Deprecated("Fields and Items will be removed in release version, use realization with Flowable instead")
+//fun View.setAlpha(alpha: RxItem<Float>) =
+//    setAlpha(alpha.observe())
 
 
 @Deprecated("Fields and Items will be removed in release version, use realization with FlowableProcessor instead")

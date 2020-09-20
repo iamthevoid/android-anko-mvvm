@@ -1,3 +1,4 @@
+include ':generator'
 include ':noxml-demo-app',
 
         ':anko-core',
