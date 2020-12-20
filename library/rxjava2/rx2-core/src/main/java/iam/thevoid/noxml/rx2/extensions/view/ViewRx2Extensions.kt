@@ -2,7 +2,6 @@
 
 package iam.thevoid.noxml.rx2.extensions.view
 
-import android.graphics.drawable.Drawable
 import android.os.Build
 import android.view.*
 import iam.thevoid.ae.*

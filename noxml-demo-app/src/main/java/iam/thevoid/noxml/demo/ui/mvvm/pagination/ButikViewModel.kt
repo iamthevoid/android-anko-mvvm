@@ -6,6 +6,7 @@ import iam.thevoid.noxml.recycler.paging.PageLoader
 import iam.thevoid.noxml.rx2.data.RxLoading
 import iam.thevoid.noxml.rx2.recycler.pagination.RxPageLoader
 import iam.thevoid.noxml.rx2.utils.loading
+import io.reactivex.Flowable
 
 class ButikViewModel : ViewModel() {
 

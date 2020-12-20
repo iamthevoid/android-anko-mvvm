@@ -37,7 +37,7 @@ object ApiInfo {
         val param = function.parameters[1]
         val paramKClass = param.type.classifier as? KClass<*>
         return sameNameMethods(function, className)
-            ?.find { apiMethod ->
+            .find { apiMethod ->
                 val signature = apiMethod.signature
                 signature.parameterTypes.size == 1 &&
                         signature.parameterTypes.first().kClass()

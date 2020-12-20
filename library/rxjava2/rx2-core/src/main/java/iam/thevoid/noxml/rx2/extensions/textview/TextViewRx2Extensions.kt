@@ -24,7 +24,7 @@ import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.processors.FlowableProcessor
 
-fun <T : CharSequence> TextView.setText(text: Flowable<T>) =
+fun TextView.setText(text: Flowable<out CharSequence>) =
     addSetter(text) {
         if (hasTextWatcherDelegate()) {
             setTextSilent(it)
@@ -36,14 +36,8 @@ fun <T : CharSequence> TextView.setText(text: Flowable<T>) =
 fun TextView.setTextResource(textResource: Flowable<Int>) =
     setText(textResource.map { string(it) })
 
-fun TextView.setTextColor(color: Flowable<Int>) =
-    addSetter(color) { setTextColor(it) }
-
 fun TextView.setTextColorResource(colorResource: Flowable<Int>) =
     addSetter(colorResource) { setTextColor(color(it)) }
-
-fun TextView.setHintTextColor(color: Flowable<Int>) =
-    addSetter(color) { setHintTextColor(it) }
 
 fun TextView.setHintTextColorResource(colorResource: Flowable<Int>) =
     addSetter(colorResource) { setHintTextColor(color(it)) }

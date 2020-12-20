@@ -29,5 +29,6 @@ private fun <T> T.canBeKClass() : KClass<*> =
         is ShortSignature -> Short::class
         is FloatSignature -> Float::class
         is DoubleSignature -> Double::class
+        is CharSignature -> Char::class
         else -> throw NotImplementedError("Branch for $this not implemented")
     }
