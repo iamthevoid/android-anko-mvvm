@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import java.util.concurrent.atomic.AtomicBoolean
 
-abstract class CoroutinesPageLoaderImpl<PAGE_INDEX, T>(
+class CoroutinesPageLoaderImpl<PAGE_INDEX, T>(
         private val startPage: PAGE_INDEX,
         private val nextPage: (PAGE_INDEX) -> PAGE_INDEX,
         private val loader: suspend (PAGE_INDEX, refresh : Boolean) -> PageLoader.Page<PAGE_INDEX, T>
