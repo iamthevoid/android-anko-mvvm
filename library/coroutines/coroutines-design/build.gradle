@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
+apply from: "../../../ext.gradle"
 
 android {
     compileSdkVersion compileApi
@@ -30,10 +31,10 @@ android {
 
 }
 
-ext {
-    libArtifactId = 'coroutines-design'
-    libDesc = 'Coroutines design port. Setters, adapters'
-}
+//ext {
+//    libArtifactId = 'coroutines-design'
+//    libDesc = 'Coroutines design port. Setters, adapters'
+//}
 
 dependencies {
 
@@ -43,7 +44,6 @@ dependencies {
     implementation project (':core-design')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
 
@@ -56,6 +56,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
 
-apply from: "../../../ext.gradle"
-apply from: "../../../install.gradle"
-apply from: "../../../deploy.gradle"
+//apply from: "../../../install.gradle"
+//apply from: "../../../deploy.gradle"

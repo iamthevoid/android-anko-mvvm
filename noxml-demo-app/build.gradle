@@ -67,7 +67,6 @@ dependencies {
     api project(':rx2-mvvm')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
@@ -87,11 +86,11 @@ dependencies {
     implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko"
     implementation "org.jetbrains.anko:anko-design:$anko"
 
-    implementation "iam.thevoid.extensions:android:$e"
-    implementation "iam.thevoid.extensions:pure:$e"
-    implementation "iam.thevoid.extensions:rx:$e"
-    implementation "iam.thevoid.util:util:$e"
-    implementation "iam.thevoid.util:coroutines:$e"
+    implementation "io.github.iamthevoid.extensions:android:$e@aar"
+    implementation "io.github.iamthevoid.extensions:pure:$e"
+    implementation "io.github.iamthevoid.extensions:rx:$e"
+    implementation "io.github.iamthevoid.extensions:util:$e"
+    implementation "io.github.iamthevoid.extensions:coroutines:$e@jar"
 
     implementation 'androidx.multidex:multidex:2.0.1'
 

@@ -1,9 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
-repositories {
-
-}
+apply from: "../../../ext.gradle"
 
 android {
     compileSdkVersion compileApi
@@ -36,10 +34,10 @@ android {
     }
 }
 
-ext {
-    libArtifactId = 'core'
-    libDesc = 'Core part of library. Abstract setter and observable listener, adapter bindings, delegates, adapters, extensions'
-}
+//ext {
+//    libArtifactId = 'core'
+//    libDesc = 'Core part of library. Abstract setter and observable listener, adapter bindings, delegates, adapters, extensions'
+//}
 
 dependencies {
 
@@ -47,15 +45,14 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     implementation "androidx.appcompat:appcompat:$appcompat"
 
-    implementation "iam.thevoid.extensions:pure:$e"
-    implementation "iam.thevoid.extensions:android:$e"
+    implementation "io.github.iamthevoid.extensions:pure:$e"
+    implementation "io.github.iamthevoid.extensions:android:$e@aar"
 
-    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
 
     testImplementation "junit:junit:$junit"
@@ -63,6 +60,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
 
-apply from: "../../../ext.gradle"
-apply from: "../../../install.gradle"
-apply from: "../../../deploy.gradle"
+//apply from: "../../../install.gradle"
+//apply from: "../../../deploy.gradle"

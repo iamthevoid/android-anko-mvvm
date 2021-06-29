@@ -6,7 +6,7 @@ apply from: 'ext.gradle'
 
 buildscript {
 
-    ext.kotlin_version = '1.4.0'
+    ext.kotlin_version = '1.5.20'
     ext.kotlinJvmTarget = '1.8'
 
     repositories {

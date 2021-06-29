@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
+apply from: "../../../ext.gradle"
 
 android {
     compileSdkVersion compileApi
@@ -30,10 +31,10 @@ android {
     }
 }
 
-ext {
-    libArtifactId = 'rx2-swiperefreshlayout'
-    libDesc = 'RxJava2 Swipe Refresh Layout. Setters, bindings, etc'
-}
+//ext {
+//    libArtifactId = 'rx2-swiperefreshlayout'
+//    libDesc = 'RxJava2 Swipe Refresh Layout. Setters, bindings, etc'
+//}
 
 dependencies {
 
@@ -43,8 +44,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "com.android.support:multidex:$multidex"
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "androidx.core:core-ktx:$ktx"
@@ -60,6 +59,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
 
-apply from: "../../../ext.gradle"
-apply from: "../../../install.gradle"
-apply from: "../../../deploy.gradle"
+//apply from: "../../../install.gradle"
+//apply from: "../../../deploy.gradle"

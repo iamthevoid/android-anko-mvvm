@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
+apply from: "../../../ext.gradle"
 
 android {
     compileSdkVersion compileApi
@@ -34,10 +35,10 @@ android {
     }
 }
 
-ext {
-    libArtifactId = 'rx2-core'
-    libDesc = 'Anko core. Extensions and Custom Views.'
-}
+//ext {
+//    libArtifactId = 'rx2-core'
+//    libDesc = 'Anko core. Extensions and Custom Views.'
+//}
 
 dependencies {
 
@@ -48,7 +49,6 @@ dependencies {
 
     implementation "com.android.support:multidex:$multidex"
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "androidx.core:core-ktx:$ktx"
@@ -57,16 +57,15 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlin"
 
-    implementation "iam.thevoid.extensions:android:$e"
-    implementation "iam.thevoid.extensions:pure:$e"
-    implementation "iam.thevoid.extensions:rx:$e"
-    implementation "iam.thevoid.util:util:$e"
+    implementation "io.github.iamthevoid.extensions:pure:$e"
+    implementation "io.github.iamthevoid.extensions:android:$e@aar"
+    implementation "io.github.iamthevoid.extensions:rx:$e"
+    implementation "io.github.iamthevoid.extensions:util:$e"
 
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test:runner:$runner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
 
-apply from: "../../../ext.gradle"
-apply from: "../../../install.gradle"
-apply from: "../../../deploy.gradle"
+//apply from: "../../../install.gradle"
+//apply from: "../../../deploy.gradle"

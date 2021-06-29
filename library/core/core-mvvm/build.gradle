@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+
+apply from: "../../../ext.gradle"
 
 android {
     compileSdkVersion compileApi
@@ -29,18 +30,17 @@ android {
     }
 }
 
-ext {
-    libArtifactId = 'core-mvvm'
-    libDesc = 'Mvvm core. Lifecycle objects + view models.'
-}
+//ext {
+//    libArtifactId = 'core-mvvm'
+//    libDesc = 'Mvvm core. Lifecycle objects + view models.'
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "androidx.core:core-ktx:$ktx"
 
-    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
 
     testImplementation "junit:junit:$junit"
@@ -48,6 +48,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
 
-apply from: "../../../ext.gradle"
-apply from: "../../../install.gradle"
-apply from: "../../../deploy.gradle"
+//apply from: "../../../install.gradle"
+//apply from: "../../../deploy.gradle"

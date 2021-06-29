@@ -1,9 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
-repositories {
-
-}
+apply from: "../../../ext.gradle"
 
 android {
     compileSdkVersion compileApi
@@ -36,18 +34,16 @@ android {
     }
 }
 
-ext {
-    libArtifactId = 'anko-rx'
-    libDesc = 'Anko rx port. Layout for adapter views'
-}
+//ext {
+//    libArtifactId = 'anko-rx'
+//    libDesc = 'Anko rx port. Layout for adapter views'
+//}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':rx2-core')
     implementation project(':core')
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation "org.jetbrains.anko:anko-sdk25:$anko" // sdk15, sdk19, sdk21, sdk23 are also available
 
@@ -56,6 +52,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
 
-apply from: "../../../ext.gradle"
-apply from: "../../../install.gradle"
-apply from: "../../../deploy.gradle"
+//apply from: "../../../install.gradle"
+//apply from: "../../../deploy.gradle"

@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+apply from: "../../../ext.gradle"
+
 android {
     compileSdkVersion compileApi
 
@@ -34,14 +36,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "androidx.core:core-ktx:$ktx"
 
-    implementation "iam.thevoid.extensions:pure:$e"
-    implementation "iam.thevoid.extensions:android:$e"
+    implementation "io.github.iamthevoid.extensions:pure:$e"
+    implementation "io.github.iamthevoid.extensions:android:$e@aar"
 
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test:runner:$runner"
