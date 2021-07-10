@@ -159,6 +159,12 @@ fun View.setClickListener(onClick: Flowable<View.OnClickListener>) =
         setOnClickListener(it)
     }
 
+fun View.setLongClickListener(onLongClick: Flowable<View.OnLongClickListener>) =
+    addSetter(onLongClick) {
+        setOnLongClickListener(null)
+        setOnLongClickListener(it)
+    }
+
 /**
  * Focus
  */
